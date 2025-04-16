@@ -55,7 +55,7 @@ def res_RF(data,n_estimators):
     test_acc = cls.score(x_test,y_test)
     return best_parameters, best_score, test_acc
 
-data = data_load('code/biyelunwen/形貌数据.xlsx','Sheet1')
+data = data_load('datasets.xlsx','Sheet1')
 c_range = range(1,101,1)
 g_range = range(1,11)
 _, svm_best_score, svm_test_acc = res_SVC(data,c_range,g_range)
