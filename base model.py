@@ -1,15 +1,10 @@
-from sklearn.model_selection import KFold,cross_val_score,cross_val_predict
+from sklearn.model_selection import KFold,cross_val_score
 import pandas as pd
-import matplotlib.pylab as plt
 import numpy as np
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
 from sklearn import preprocessing
 from sklearn.svm import SVC
-from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import recall_score
 
 def data_load(path,sheet_name):
     data = pd.read_excel(path,sheet_name=sheet_name)
