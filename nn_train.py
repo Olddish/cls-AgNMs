@@ -83,7 +83,7 @@ def test_loop(model, test_loader):
     return acc
 
 if __name__ == "__main__":
-    path = "biyelunwen/形貌数据.xlsx"
+    path = "datasets.xlsx"
     sheet_name = 'Sheet1'
     train_batch_size = 32
     test_batch_size = 100
