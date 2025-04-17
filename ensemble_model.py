@@ -35,7 +35,7 @@ def ensemble_model(model1, model2, model3, model4, loader, weights):
 
 
 if __name__ == "__main__":
-    path = "biyelunwen/形貌数据.xlsx"
+    path = "datasets.xlsx"
     sheet_name = 'Sheet1'
     train_batch_size = 200
     test_batch_size = 100
@@ -44,13 +44,13 @@ if __name__ == "__main__":
     train_loader, test_loader = data_process.data_split(train_batch_size, test_batch_size, Y_column)
 
     AgNW_model = MLP()
-    AgNW_model.load_state_dict(torch.load("biyelunwen/model_save/AgNW_model.pth"))
+    AgNW_model.load_state_dict(torch.load("models/AgNW_model.pth"))
     AgNP_model = MLP()
-    AgNP_model.load_state_dict(torch.load("biyelunwen/model_save/AgNP_model.pth"))
+    AgNP_model.load_state_dict(torch.load("models/AgNP_model.pth"))
     LNP_model = MLP()
-    LNP_model.load_state_dict(torch.load("biyelunwen/model_save/L-NP_model.pth"))
+    LNP_model.load_state_dict(torch.load("models/L-NP_model.pth"))
     Mixture_model = MLP()
-    Mixture_model.load_state_dict(torch.load("biyelunwen/model_save/Mixture_model.pth"))
+    Mixture_model.load_state_dict(torch.load("models/Mixture_model.pth"))
 
     weights = torch.tensor([1.1, 1.0, 0.8, 1.0], dtype=torch.float32) #AgNW,LNP,AgNP,Mixture
     train_output,train_labels = ensemble_model(AgNW_model, LNP_model, AgNP_model, Mixture_model, train_loader, weights)
