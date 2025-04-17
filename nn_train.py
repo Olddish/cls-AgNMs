@@ -96,5 +96,5 @@ if __name__ == "__main__":
     trained_model = train_loop(model, train_loader, lr, epoch_num)
     accuracy = test_loop(trained_model, test_loader)
     print(f'test accuracy: {accuracy:.3f}')
-    # torch.save(trained_model.state_dict(), "biyelunwen/model_save/Mixture_model.pth")
+    # torch.save(trained_model.state_dict(), "models/Mixture_model.pth")
 
